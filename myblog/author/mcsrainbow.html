@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>myblog - mcsrainbowmyblog</title>
+
+    <link rel="stylesheet" href="/theme/css/main.css">
+    <link rel="stylesheet" href="/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="" class="grv-img"/></div>
+        <div class="title"><a href="/">myblog </a></div>
+        <div class="sub-title"></div>
+
+<p>
+  <div class="view"><a href="/archives.html">Archives</a></div>
+</p>
+
+<!-- Social links -->
+<div class="social">
+<h4>Follow Me</h4>
+<ul>
+    <li><a href="#">You can add links in your config file</a></li>
+    <li><a href="#">Another social link</a></li>
+</ul>
+</div>
+
+      </header>
+      <section>
+      <div class="front-title"><a href="/hello.html">Hello</a></div>
+<p>
+<small>
+<abbr class="published" title="2014-09-24T02:06:00+08:00">
+  三 24 九月 2014
+</abbr> | 
+  tags: 
+    <a href="/tag/pelican.html">Pelican</a>, 
+    <a href="/tag/markdown.html">Markdown</a>, 
+ -- (<a href="/hello.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>Hello Pelican, Markdown and GitHub Pages.</p> 
+      <div class="read-more"><a href="/hello.html">read more...</a></div>
+      <hr />
+      <div class="front-title"><a href="/wlecome.html">Welcome</a></div>
+<p>
+<small>
+<abbr class="published" title="2014-09-24T02:06:00+08:00">
+  三 24 九月 2014
+</abbr> | 
+  tags: 
+    <a href="/tag/pelican.html">Pelican</a>, 
+    <a href="/tag/markdown.html">Markdown</a>, 
+ -- (<a href="/wlecome.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>Hello Pelican, Markdown and GitHub Pages.</p> 
+      <div class="read-more"><a href="/wlecome.html">read more...</a></div>
+      <hr />
+
+      </section>
+      <footer>
+        <p><small>&copy; myblog &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
+      
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+      
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
+
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
