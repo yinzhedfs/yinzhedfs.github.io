@@ -4,70 +4,70 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>/</loc>
-<lastmod>2016-06-04T15:07:34-00:00</lastmod>
+<loc>/myblog/</loc>
+<lastmod>2016-06-04T15:40:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/archives.html</loc>
-<lastmod>2016-06-04T15:07:34-00:00</lastmod>
+<loc>/myblog/archives.html</loc>
+<lastmod>2016-06-04T15:40:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tags.html</loc>
-<lastmod>2016-06-04T15:07:34-00:00</lastmod>
+<loc>/myblog/tags.html</loc>
+<lastmod>2016-06-04T15:40:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/categories.html</loc>
-<lastmod>2016-06-04T15:07:34-00:00</lastmod>
+<loc>/myblog/categories.html</loc>
+<lastmod>2016-06-04T15:40:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/hello.html</loc>
+<loc>/myblog/hello.html</loc>
 <lastmod>2014-09-24T02:06:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/wlecome.html</loc>
+<loc>/myblog/wlecome.html</loc>
 <lastmod>2014-09-24T02:06:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/uncategorized.html</loc>
+<loc>/myblog/category/uncategorized.html</loc>
 <lastmod>2014-09-24T02:06:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/pelican.html</loc>
+<loc>/myblog/tag/pelican.html</loc>
 <lastmod>2014-09-24T02:06:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/markdown.html</loc>
+<loc>/myblog/tag/markdown.html</loc>
 <lastmod>2014-09-24T02:06:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/author/mcsrainbow.html</loc>
+<loc>/myblog/author/mcsrainbow.html</loc>
 <lastmod>2014-09-24T02:06:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
