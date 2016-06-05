@@ -66,6 +66,60 @@
 </pre></div>
 
 
+<div class="highlight"><pre><span></span><span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://associates.amazon.cn/gp/associates/network/reports/report.html&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">AmazonSpider</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">http_user</span> <span class="o">=</span> <span class="n">username</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">http_pass</span> <span class="o">=</span> <span class="n">password</span>
+    <span class="c1">#login form</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">formdata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;create&#39;</span><span class="p">:</span><span class="s1">&#39;0&#39;</span><span class="p">,</span>\
+                    <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">http_user</span><span class="p">,</span> \
+                    <span class="s1">&#39;password&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">http_pass</span><span class="p">,</span>\
+                    <span class="p">}</span>   
+    <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ccept-Charset&#39;</span><span class="p">:</span><span class="s1">&#39;GBK,utf-8;q=0.7,*;q=0.3&#39;</span><span class="p">,</span>\
+                    <span class="s1">&#39;Accept-Encoding&#39;</span><span class="p">:</span><span class="s1">&#39;gzip,deflate,sdch&#39;</span><span class="p">,</span>\
+                    <span class="s1">&#39;Accept-Language&#39;</span><span class="p">:</span><span class="s1">&#39;zh-CN,zh;q=0.8&#39;</span><span class="p">,</span>\
+                    <span class="s1">&#39;Cache-Control&#39;</span><span class="p">:</span><span class="s1">&#39;max-age=0&#39;</span><span class="p">,</span>\
+                    <span class="s1">&#39;Connection&#39;</span><span class="p">:</span><span class="s1">&#39;keep-alive&#39;</span><span class="p">,</span>\
+                    <span class="p">}</span>   
+    <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">0</span> 
+
+<span class="k">def</span> <span class="nf">start_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_urls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">FormRequest</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cookiejar&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">},</span>\
+                            <span class="c1">#formdata = self.formdata,\</span>
+                            <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>\
+                            <span class="n">callback</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">)</span><span class="c1">#jump to login page</span>
+
+<span class="k">def</span> <span class="nf">_log_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_log_page</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s1">&#39;amazon_login.html&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">FormRequest</span><span class="o">.</span><span class="n">from_response</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> \
+                        <span class="n">formdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formdata</span><span class="p">,</span>\
+                        <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>\
+                        <span class="n">meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cookiejar&#39;</span><span class="p">:</span><span class="n">response</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;cookiejar&#39;</span><span class="p">]},</span>\
+                        <span class="n">callback</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_item</span><span class="p">)]</span><span class="c1">#success login</span>
+
+<span class="k">def</span> <span class="nf">parse_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_log_page</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s1">&#39;after_login.html&#39;</span><span class="p">)</span>
+    <span class="n">hxs</span> <span class="o">=</span> <span class="n">HtmlXPathSelector</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">report_urls</span> <span class="o">=</span> <span class="n">hxs</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;//div[@id=&quot;menuh&quot;]/ul/li[4]/div//a/@href&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">report_url</span> <span class="ow">in</span> <span class="n">report_urls</span><span class="p">:</span>
+        <span class="c1">#print &quot;list:&quot;+report_url</span>
+        <span class="k">yield</span> <span class="n">Request</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ab_path</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">report_url</span><span class="p">),</span>\
+                        <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>\
+                        <span class="n">meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cookiejar&#39;</span><span class="p">:</span><span class="n">response</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;cookiejar&#39;</span><span class="p">],</span>\
+                                <span class="p">},</span>\
+                        <span class="n">callback</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_report</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">parse_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">++</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_log_page</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">.html&quot;</span> <span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
+
+
 <p><img src="https://raw.githubusercontent.com/yinzhedfs/markdown/master/pictures/real_beauty.jpg" width="500"></p>
     </div><!-- /.entry-content -->
   </article>
