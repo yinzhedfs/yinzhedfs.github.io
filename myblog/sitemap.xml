@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2016-06-12T00:12:08-00:00</lastmod>
+<lastmod>2016-06-19T16:02:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2016-06-12T00:12:08-00:00</lastmod>
+<lastmod>2016-06-19T16:02:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2016-06-12T00:12:08-00:00</lastmod>
+<lastmod>2016-06-19T16:02:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2016-06-12T00:12:08-00:00</lastmod>
+<lastmod>2016-06-19T16:02:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,22 +39,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/amazon.html</loc>
+<lastmod>2016-05-15T12:30:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
 <loc>/markdown.html</loc>
-<lastmod>2016-06-04T09:00:00+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>/welcome.html</loc>
-<lastmod>2016-06-04T09:00:00+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>/hello.html</loc>
-<lastmod>2014-09-24T02:06:00+08:00</lastmod>
+<lastmod>2016-03-01T09:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
@@ -75,7 +68,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/pelican.html</loc>
-<lastmod>2016-06-04T09:00:00+08:06</lastmod>
+<lastmod>2016-03-01T09:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -89,14 +82,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/markdown.html</loc>
-<lastmod>2016-06-04T09:00:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/author/mcsrainbow.html</loc>
-<lastmod>2014-09-24T02:06:00+08:06</lastmod>
+<lastmod>2016-03-01T09:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
